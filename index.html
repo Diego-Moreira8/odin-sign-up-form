@@ -1,11 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./reset.css" />
     <link rel="stylesheet" href="./styles.css" />
     <title>Sign Up</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div><span>LOGO</span><span>ODIN</span></div>
+      <div>
+        Photo by
+        <a href="https://unsplash.com/@william_rudolph" target="_blank"
+          >William Rudolph</a
+        >
+        on
+        <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+      </div>
+    </header>
+    <main>
+      <div>
+        Isto não é um serviço online de verdade! Você sabe que precisa de algo
+        assim na sua vida para lhe ajudar a realizar os seus sonhos mais
+        profundos. Inscreva-se agora para começar. <br />
+        Você sabe que quer.
+      </div>
+      <div>Vamos lá!</div>
+      <form action="http://httpbin.org/post" method="post">
+        <label for="first-name">Nome</label>
+        <input type="text" name="first-name" id="first-name" required />
+        <label for="last-name">Sobrenome</label>
+        <input type="text" name="last-name" id="last-name" required />
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email" required />
+        <label for="phone">Telefone</label>
+        <input type="tel" name="phone" id="phone" />
+        <label for="password">Senha</label>
+        <input type="password" name="password" id="password" required />
+        <label for="confirm-password">Confirmar senha</label>
+        <input
+          type="password"
+          name="confirm-password"
+          id="confirm-password"
+          required
+        />
+        <button type="submit">Criar Conta</button>
+      </form>
+      <div>Já tem uma conta? <a href="#">Entrar</a></div>
+    </main>
+  </body>
 </html>
