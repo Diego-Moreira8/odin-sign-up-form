@@ -21,34 +21,48 @@
       </div>
     </header>
     <main>
-      <div>
+      <div class="presentation">
         Isto não é um serviço online de verdade! Você sabe que precisa de algo
         assim na sua vida para lhe ajudar a realizar os seus sonhos mais
-        profundos. Inscreva-se agora para começar. <br />
-        Você sabe que quer.
+        profundos. Inscreva-se <em>agora</em> para começar.
       </div>
-      <div>Vamos lá!</div>
+      <div class="presentation">Você <em>sabe</em> que quer!</div>
+      <div class="presentation">Vamos lá!</div>
       <form action="http://httpbin.org/post" method="post">
-        <label for="first-name">Nome</label>
-        <input type="text" name="first-name" id="first-name" required />
-        <label for="last-name">Sobrenome</label>
-        <input type="text" name="last-name" id="last-name" required />
-        <label for="email">E-mail</label>
-        <input type="email" name="email" id="email" required />
-        <label for="phone">Telefone</label>
-        <input type="tel" name="phone" id="phone" />
-        <label for="password">Senha</label>
-        <input type="password" name="password" id="password" required />
-        <label for="confirm-password">Confirmar senha</label>
-        <input
-          type="password"
-          name="confirm-password"
-          id="confirm-password"
-          required
-        />
-        <button type="submit">Criar Conta</button>
+        <div>
+          <label for="first-name">Nome</label>
+          <input type="text" name="first-name" id="first-name" required />
+        </div>
+        <div>
+          <label for="last-name">Sobrenome</label>
+          <input type="text" name="last-name" id="last-name" required />
+        </div>
+        <div>
+          <label for="email">E-mail</label>
+          <input type="email" name="email" id="email" required />
+        </div>
+        <div>
+          <label for="phone">Telefone</label>
+          <input type="tel" name="phone" id="phone" />
+        </div>
+        <div>
+          <label for="password">Senha</label>
+          <input type="password" name="password" id="password" required />
+        </div>
+        <div>
+          <label for="confirm-password">Confirmar senha</label>
+          <input
+            type="password"
+            name="confirm-password"
+            id="confirm-password"
+            required
+          />
+        </div>
+        <div>
+          <button type="submit">Criar Conta</button>
+        </div>
       </form>
-      <div>Já tem uma conta? <a href="#">Entrar</a></div>
+      <div class="log-in">Já tem uma conta? <a href="#">Entrar</a></div>
     </main>
   </body>
 </html>

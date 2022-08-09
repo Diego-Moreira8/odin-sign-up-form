@@ -49,4 +49,66 @@ header a {
 
 main {
   width: 60vw;
+  padding: 32px 128px 32px 32px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+em {
+  font-style: italic;
+}
+
+.presentation {
+  margin-bottom: 1rem;
+}
+
+form {
+  padding: 16px;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
+form > div {
+  display: flex;
+  flex-flow: column;
+  width: 40%;
+  margin-bottom: 16px;
+  margin-right: calc(16px * 2);
+}
+
+label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+input {
+  font-size: 1.25rem;
+  height: 1.5rem;
+  border: 1px solid rgb(208, 208, 208);
+  border-radius: 4px;
+  padding: 4px 16px;
+}
+
+button[type="submit"] {
+  font-size: 1.25rem;
+  width: fit-content;
+  padding: 8px 40px;
+  margin-top: 16px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  background-color: green;
+  border-radius: 4px;
+}
+
+main a {
+  color: green;
+}
+
+.log-in {
+  margin-top: 40px;
 }
