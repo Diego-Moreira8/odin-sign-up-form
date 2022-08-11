@@ -85,6 +85,11 @@ label {
   text-transform: uppercase;
 }
 
+.required {
+  color: red;
+  margin-left: 0.125rem;
+}
+
 input {
   font-size: 1.25rem;
   height: 1.5rem;
@@ -93,7 +98,18 @@ input {
   padding: 4px 16px;
 }
 
+input.error {
+  border: 1px solid red;
+}
+
+.error-message {
+  height: 1rem;
+  font-size: 0.75rem;
+  color: red;
+}
+
 button[type="submit"] {
+  cursor: pointer;
   font-size: 1.25rem;
   width: fit-content;
   padding: 8px 40px;
