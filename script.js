@@ -17,9 +17,12 @@ const confirmPasswordErrorMessage = document.querySelector(
 );
 
 const nameRegex = /[a-z]/i;
+const emailRegex =
+  /^([\+a-zA-Z\d\._-]+)@([a-zA-Z\d]+)\.([a-zA-z]{2,8})(\.[a-zA-z]{2,8})?$/;
 
 firstNameInput.addEventListener("change", nameTest);
 lastNameInput.addEventListener("change", nameTest);
+emailInput.addEventListener("change", emailTest);
 confirmPasswordInput.addEventListener("change", passwordMatch);
 
 function nameTest(e) {
@@ -53,6 +56,18 @@ function nameTest(e) {
         error = true;
       }
     }
+  }
+}
+
+function emailTest(e) {
+  if (emailRegex.test(e.target.value)) {
+    e.target.classList.remove("error");
+    e.target.classList.add("passed");
+    emailErrorMessage.innerText = "";
+  } else {
+    e.target.classList.remove("passed");
+    e.target.classList.add("error");
+    emailErrorMessage.innerText = "E-mail inválido.";
   }
 }
 
