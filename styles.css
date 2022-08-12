@@ -92,14 +92,18 @@ label {
 
 input {
   font-size: 1.25rem;
-  height: 1.5rem;
   border: 1px solid rgb(208, 208, 208);
   border-radius: 4px;
   padding: 4px 16px;
+  box-sizing: border-box;
 }
 
 input.error {
-  border: 1px solid red;
+  border: 2px solid red;
+}
+
+input.passed {
+  border: 2px solid #00c700;
 }
 
 .error-message {

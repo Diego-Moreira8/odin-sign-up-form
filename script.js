@@ -1,29 +1,64 @@
 const form = document.querySelector("form");
-const firstName = document.getElementById("first-name");
-const lastName = document.getElementById("last-name");
-const email = document.getElementById("email");
-const phone = document.getElementById("phone");
-const password = document.getElementById("password");
-const confirmPassword = document.getElementById("confirm-password");
+// Inputs
+const firstNameInput = document.getElementById("first-name");
+const lastNameInput = document.getElementById("last-name");
+const emailInput = document.getElementById("email");
+const phoneInput = document.getElementById("phone");
+const passwordInput = document.getElementById("password");
+const confirmPasswordInput = document.getElementById("confirm-password");
+// Input error divs
+const firstNameErrorMessage = document.querySelector(".first-name-error");
+const lastNameErrorMessage = document.querySelector(".last-name-error");
+const emailErrorMessage = document.querySelector(".email-error");
+const phoneErrorMessage = document.querySelector(".phone-error");
+const passwordErrorMessage = document.querySelector(".password-error");
 const confirmPasswordErrorMessage = document.querySelector(
   ".confirm-password-error"
 );
-const firstNameErrorMessage = document.querySelector(".first-name-error");
+
 const nameRegex = /[a-z]/i;
 
-form.addEventListener("submit", (e) => {
-  // Test first name
-  for (let letter of firstName.value) {
-    if (!nameRegex.test(letter)) {
-      e.preventDefault();
-      firstNameErrorMessage.innerText =
-        "Nome inválido: somente letras são permitidas";
-      document.querySelector("#first-name").classList.toggle("error");
+firstNameInput.addEventListener("change", nameTest);
+lastNameInput.addEventListener("change", nameTest);
+confirmPasswordInput.addEventListener("change", passwordMatch);
+
+function nameTest(e) {
+  let error = false;
+  for (let letter of e.target.value) {
+    if (!error) {
+      if (nameRegex.test(letter)) {
+        e.target.classList.remove("error");
+        e.target.classList.add("passed");
+        switch (e.target.id) {
+          case "first-name":
+            firstNameErrorMessage.innerText = "";
+            break;
+          case "last-name":
+            lastNameErrorMessage.innerText = "";
+            break;
+        }
+      } else {
+        e.target.classList.remove("passed");
+        e.target.classList.add("error");
+        switch (e.target.id) {
+          case "first-name":
+            firstNameErrorMessage.innerText =
+              "Nome inválido. Somente letras são permitidas.";
+            break;
+          case "last-name":
+            lastNameErrorMessage.innerText =
+              "Nome inválido. Somente letras são permitidas.";
+            break;
+        }
+        error = true;
+      }
     }
   }
-  // Test confirm-password
-  if (password.value !== confirmPassword.value) {
+}
+
+function passwordMatch() {
+  if (passwordInput.value !== confirmPasswordInput.value) {
     confirmPasswordErrorMessage.innerText =
       "Senhas diferentes. Favor confirmar a senha escolhida";
   }
-});
+}
