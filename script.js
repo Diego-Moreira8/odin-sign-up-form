@@ -23,9 +23,11 @@ const emailRegex =
 firstNameInput.addEventListener("change", nameTest);
 lastNameInput.addEventListener("change", nameTest);
 emailInput.addEventListener("change", emailTest);
+phoneInput.addEventListener("keyup", phoneFormat);
 confirmPasswordInput.addEventListener("change", passwordMatch);
 
 function nameTest(e) {
+  console.log(e);
   let error = false;
   for (let letter of e.target.value) {
     if (!error) {
@@ -75,5 +77,18 @@ function passwordMatch() {
   if (passwordInput.value !== confirmPasswordInput.value) {
     confirmPasswordErrorMessage.innerText =
       "Senhas diferentes. Favor confirmar a senha escolhida";
+  }
+}
+
+function phoneFormat(e) {
+  console.log(e.target.value.length);
+  let inputLength = e.target.value.length;
+  if (inputLength === 1) e.target.value = `(${e.target.value}`;
+  if (inputLength === 3) e.target.value += `) `;
+  if (inputLength === 9) e.target.value += `-`;
+  if (inputLength === 15) {
+    e.target.value = e.target.value.replace("-", "");
+    e.target.value =
+      e.target.value.slice(0, 10) + "-" + e.target.value.slice(10, 14);
   }
 }
