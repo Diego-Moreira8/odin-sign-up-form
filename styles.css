@@ -92,7 +92,7 @@ label {
 
 input {
   font-size: 1.25rem;
-  border: 1px solid rgb(208, 208, 208);
+  border: 2px solid rgb(208, 208, 208);
   border-radius: 4px;
   padding: 4px 16px;
   box-sizing: border-box;

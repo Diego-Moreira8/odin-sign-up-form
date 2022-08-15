@@ -17,13 +17,15 @@ const confirmPasswordErrorMessage = document.querySelector(
 );
 
 const nameRegex = /[a-z]/i;
+const phoneRegex = /^[0-9]*$/g;
 const emailRegex =
   /^([\+a-zA-Z\d\._-]+)@([a-zA-Z\d]+)\.([a-zA-z]{2,8})(\.[a-zA-z]{2,8})?$/;
 
 firstNameInput.addEventListener("change", nameTest);
 lastNameInput.addEventListener("change", nameTest);
 emailInput.addEventListener("change", emailTest);
-phoneInput.addEventListener("keyup", phoneFormat);
+phoneInput.addEventListener("change", phoneTest);
+// phoneInput.addEventListener("keydown", phoneFormat);
 confirmPasswordInput.addEventListener("change", passwordMatch);
 
 function nameTest(e) {
@@ -80,15 +82,30 @@ function passwordMatch() {
   }
 }
 
-function phoneFormat(e) {
-  console.log(e.target.value.length);
-  let inputLength = e.target.value.length;
-  if (inputLength === 1) e.target.value = `(${e.target.value}`;
-  if (inputLength === 3) e.target.value += `) `;
-  if (inputLength === 9) e.target.value += `-`;
-  if (inputLength === 15) {
-    e.target.value = e.target.value.replace("-", "");
-    e.target.value =
-      e.target.value.slice(0, 10) + "-" + e.target.value.slice(10, 14);
+function phoneTest(e) {
+  const phone = String(e.target.value);
+  if (phoneRegex.test(phone) && phone.length >= 10 && phone.length <= 11) {
+    console.log(phone.length);
+    e.target.classList.remove("error");
+    e.target.classList.add("passed");
+    phoneErrorMessage.innerText = "";
+  } else {
+    e.target.classList.remove("passed");
+    e.target.classList.add("error");
+    phoneErrorMessage.innerText = "Telefone inválido.";
   }
 }
+
+// Try later
+// function phoneFormat(e) {
+//   console.log(e.target.value.length);
+//   let inputLength = e.target.value.length;
+//   if (inputLength === 1) e.target.value = `(${e.target.value}`;
+//   if (inputLength === 3) e.target.value += `) `;
+//   if (inputLength === 9) e.target.value += `-`;
+//   if (inputLength === 14) {
+//     e.target.value = e.target.value.replace("-", "");
+//     e.target.value =
+//       e.target.value.slice(0, 10) + "-" + e.target.value.slice(10, 14);
+//   }
+// }
