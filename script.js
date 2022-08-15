@@ -75,17 +75,9 @@ function emailTest(e) {
   }
 }
 
-function passwordMatch() {
-  if (passwordInput.value !== confirmPasswordInput.value) {
-    confirmPasswordErrorMessage.innerText =
-      "Senhas diferentes. Favor confirmar a senha escolhida";
-  }
-}
-
 function phoneTest(e) {
   const phone = String(e.target.value);
   if (phoneRegex.test(phone) && phone.length >= 10 && phone.length <= 11) {
-    console.log(phone.length);
     e.target.classList.remove("error");
     e.target.classList.add("passed");
     phoneErrorMessage.innerText = "";
@@ -96,7 +88,6 @@ function phoneTest(e) {
   }
 }
 
-// Try later
 // function phoneFormat(e) {
 //   console.log(e.target.value.length);
 //   let inputLength = e.target.value.length;
@@ -109,3 +100,15 @@ function phoneTest(e) {
 //       e.target.value.slice(0, 10) + "-" + e.target.value.slice(10, 14);
 //   }
 // }
+
+function passwordMatch(e) {
+  if (passwordInput.value === confirmPasswordInput.value) {
+    e.target.classList.remove("error");
+    e.target.classList.add("passed");
+    confirmPasswordErrorMessage.innerText = "";
+  } else {
+    e.target.classList.remove("passed");
+    e.target.classList.add("error");
+    confirmPasswordErrorMessage.innerText = "Senhas não batem.";
+  }
+}
