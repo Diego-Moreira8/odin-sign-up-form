@@ -26,6 +26,7 @@ lastNameInput.addEventListener("change", nameTest);
 emailInput.addEventListener("change", emailTest);
 phoneInput.addEventListener("change", phoneTest);
 // phoneInput.addEventListener("keydown", phoneFormat);
+passwordInput.addEventListener("change", passwordTest);
 confirmPasswordInput.addEventListener("change", passwordMatch);
 
 function nameTest(e) {
@@ -100,6 +101,19 @@ function phoneTest(e) {
 //       e.target.value.slice(0, 10) + "-" + e.target.value.slice(10, 14);
 //   }
 // }
+
+function passwordTest(e) {
+  const password = e.target.value;
+  if (password.length >= 8) {
+    e.target.classList.remove("error");
+    e.target.classList.add("passed");
+    passwordErrorMessage.innerText = "";
+  } else {
+    e.target.classList.remove("passed");
+    e.target.classList.add("error");
+    passwordErrorMessage.innerText = "Senha muito curta.";
+  }
+}
 
 function passwordMatch(e) {
   if (passwordInput.value === confirmPasswordInput.value) {
