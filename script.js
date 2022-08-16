@@ -1,4 +1,10 @@
 const form = document.querySelector("form");
+let nameIsValid = false;
+let lastNameIsValid = false;
+let emailIsValid = false;
+let phoneIsValid = false;
+let passwordIsValid = false;
+let passwordMatchIsValid = false;
 // Inputs
 const firstNameInput = document.getElementById("first-name");
 const lastNameInput = document.getElementById("last-name");
@@ -28,6 +34,7 @@ phoneInput.addEventListener("change", phoneTest);
 // phoneInput.addEventListener("keydown", phoneFormat);
 passwordInput.addEventListener("change", passwordTest);
 confirmPasswordInput.addEventListener("change", passwordMatch);
+form.addEventListener("submit", submit);
 
 function nameTest(e) {
   console.log(e);
@@ -40,9 +47,11 @@ function nameTest(e) {
         switch (e.target.id) {
           case "first-name":
             firstNameErrorMessage.innerText = "";
+            nameIsValid = true;
             break;
           case "last-name":
             lastNameErrorMessage.innerText = "";
+            lastNameIsValid = true;
             break;
         }
       } else {
@@ -52,10 +61,12 @@ function nameTest(e) {
           case "first-name":
             firstNameErrorMessage.innerText =
               "Nome inválido. Somente letras são permitidas.";
+            nameIsValid = false;
             break;
           case "last-name":
             lastNameErrorMessage.innerText =
               "Nome inválido. Somente letras são permitidas.";
+            lastNameIsValid = false;
             break;
         }
         error = true;
@@ -69,10 +80,12 @@ function emailTest(e) {
     e.target.classList.remove("error");
     e.target.classList.add("passed");
     emailErrorMessage.innerText = "";
+    emailIsValid = true;
   } else {
     e.target.classList.remove("passed");
     e.target.classList.add("error");
     emailErrorMessage.innerText = "E-mail inválido.";
+    emailIsValid = false;
   }
 }
 
@@ -82,10 +95,12 @@ function phoneTest(e) {
     e.target.classList.remove("error");
     e.target.classList.add("passed");
     phoneErrorMessage.innerText = "";
+    phoneIsValid = true;
   } else {
     e.target.classList.remove("passed");
     e.target.classList.add("error");
     phoneErrorMessage.innerText = "Telefone inválido.";
+    phoneIsValid = false;
   }
 }
 
@@ -108,10 +123,12 @@ function passwordTest(e) {
     e.target.classList.remove("error");
     e.target.classList.add("passed");
     passwordErrorMessage.innerText = "";
+    passwordIsValid = true;
   } else {
     e.target.classList.remove("passed");
     e.target.classList.add("error");
     passwordErrorMessage.innerText = "Senha muito curta.";
+    passwordIsValid = false;
   }
 }
 
@@ -120,9 +137,25 @@ function passwordMatch(e) {
     e.target.classList.remove("error");
     e.target.classList.add("passed");
     confirmPasswordErrorMessage.innerText = "";
+    passwordMatchIsValid = true;
   } else {
     e.target.classList.remove("passed");
     e.target.classList.add("error");
     confirmPasswordErrorMessage.innerText = "Senhas não batem.";
+    passwordMatchIsValid = false;
+  }
+}
+
+function submit(e) {
+  if (
+    nameIsValid === false ||
+    lastNameIsValid === false ||
+    emailIsValid === false ||
+    phoneIsValid === false ||
+    passwordIsValid === false ||
+    passwordMatchIsValid === false
+  ) {
+    e.preventDefault();
+    console.log("Invalid");
   }
 }
