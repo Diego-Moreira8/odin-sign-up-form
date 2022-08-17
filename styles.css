@@ -48,7 +48,6 @@ header a {
 }
 
 main {
-  width: 60vw;
   padding: 32px 128px 32px 32px;
   display: flex;
   flex-flow: column;
@@ -66,18 +65,15 @@ em {
 }
 
 form {
-  padding: 16px;
-  display: flex;
-  flex-flow: row;
-  flex-wrap: wrap;
+  padding: 16px 128px 16px 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 32px;
 }
 
 form > div {
   display: flex;
   flex-flow: column;
-  width: 40%;
-  margin-bottom: 16px;
-  margin-right: calc(16px * 2);
 }
 
 label {
