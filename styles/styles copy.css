@@ -1,6 +1,6 @@
 @font-face {
   font-family: norse-bold;
-  src: url(./Norse-Bold.otf);
+  src: url(../fonts/Norse-Bold.otf);
 }
 
 :root {
@@ -15,7 +15,7 @@ body {
 }
 
 header {
-  background: url(./header-picture.jpg) center;
+  background: url(../images/header-picture.jpg) center;
   background-size: cover;
   color: white;
   width: 40vw;
