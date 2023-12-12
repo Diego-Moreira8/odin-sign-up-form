@@ -9,10 +9,9 @@
   </head>
   <body>
     <header>
-      <div class="logo">
-        <img src="./images/odin-lined.png" alt="Odin logo" />ODIN
-      </div>
-      <div>
+      <img src="./images/odin-lined.png" alt="Odin logo" class="logo" />
+      <div class="brand">ODIN</div>
+      <div class="photo-credits">
         Photo by
         <a href="https://unsplash.com/@william_rudolph" target="_blank"
           >William Rudolph</a
@@ -22,54 +21,81 @@
       </div>
     </header>
     <main>
-      <div class="presentation">
+      <p>
         Isto não é um serviço online de verdade! Você sabe que precisa de algo
         assim na sua vida para lhe ajudar a realizar os seus sonhos mais
-        profundos. Inscreva-se <em>agora</em> para começar.
-      </div>
-      <div class="presentation">Você <em>sabe</em> que quer!</div>
-      <div class="presentation">Vamos lá!</div>
+        profundos. Inscreva-se <strong>agora</strong> para começar.
+        <br />
+        Você <strong>sabe</strong> que quer!
+        <br />
+        Vamos lá!
+      </p>
+
       <form action="/" method="GET">
-        <div>
-          <label for="first-name">Nome<span class="required">*</span></label>
+        <div class="form-row">
+          <label for="first-name"
+            >Nome<span aria-label="required" title="Required field"
+              >*</span
+            ></label
+          >
           <input type="text" name="first-name" id="first-name" />
-          <div class="error-message first-name-error"></div>
+          <div class="error-message"></div>
         </div>
-        <div>
+
+        <div class="form-row">
           <label for="last-name"
-            >Sobrenome<span class="required">*</span></label
+            >Sobrenome<span aria-label="required" title="Required field"
+              >*</span
+            ></label
           >
           <input type="text" name="last-name" id="last-name" />
-          <div class="error-message last-name-error"></div>
+          <div class="error-message"></div>
         </div>
-        <div>
-          <label for="email">E-mail<span class="required">*</span></label>
+
+        <div class="form-row">
+          <label for="email"
+            >E-mail<span aria-label="required" title="Required field"
+              >*</span
+            ></label
+          >
           <input type="email" name="email" id="email" />
-          <div class="error-message email-error"></div>
+          <div class="error-message"></div>
         </div>
-        <div>
+
+        <div class="form-row">
           <label for="phone"
-            >DDD + Telefone<span class="required">*</span></label
+            >DDD + Telefone<span aria-label="required" title="Required field"
+              >*</span
+            ></label
           >
           <input type="tel" name="phone" id="phone" />
-          <div class="error-message phone-error"></div>
+          <div class="error-message"></div>
         </div>
-        <div>
-          <label for="password">Senha<span class="required">*</span></label>
+
+        <div class="form-row">
+          <label for="password"
+            >Senha<span aria-label="required" title="Required field"
+              >*</span
+            ></label
+          >
           <input type="password" name="password" id="password" />
-          <div class="error-message password-error"></div>
+          <div class="error-message"></div>
         </div>
-        <div>
+
+        <div class="form-row">
           <label for="confirm-password"
-            >Confirmar senha<span class="required">*</span></label
+            >Confirmar senha<span aria-label="required" title="Required field"
+              >*</span
+            ></label
           >
           <input
             type="password"
             name="confirm-password"
             id="confirm-password"
           />
-          <div class="error-message confirm-password-error"></div>
+          <div class="error-message"></div>
         </div>
+
         <div>
           <button type="submit">Criar Conta</button>
         </div>
