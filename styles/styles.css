@@ -1,0 +1,124 @@
+@font-face {
+  font-family: norse-bold;
+  src: url(../fonts/Norse-Bold.otf);
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+  text-decoration: underline;
+}
+a:hover {
+  color: blue;
+}
+
+:focus {
+  outline: 2px solid black;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 900px) {
+  body {
+    grid-template-columns: 1fr 2fr;
+    min-height: 100vh;
+  }
+}
+body header {
+  background: url("../images/header-picture.jpg") center;
+  color: white;
+  padding: 1rem 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+body header .brand {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+body header .brand img {
+  height: 5rem;
+}
+body header .brand div {
+  font-family: norse-bold;
+  font-size: 3rem;
+}
+body header .photo-credits {
+  text-align: center;
+}
+body header .photo-credits a:hover {
+  color: lightblue;
+}
+body main {
+  color: rgb(60, 60, 60);
+  padding: 1rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+@media (min-width: 900px) {
+  body main {
+    max-width: 600px;
+    margin-left: 2rem;
+  }
+}
+body main p {
+  line-height: 1.3;
+}
+body main form {
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 500px) {
+  body main form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+body main form .form-row {
+  display: flex;
+  flex-flow: column;
+}
+body main form .form-row label {
+  margin-bottom: 0.25rem;
+}
+body main form .form-row label [aria-label=required] {
+  color: red;
+  margin: 0.1rem;
+}
+body main form .form-row input {
+  font-size: inherit;
+  border: 1px solid darkgray;
+  border-radius: 0.25rem;
+  padding: 0.25rem 1rem;
+}
+body main form .form-row input:valid {
+  border: 2px solid green;
+}
+body main form .form-row input:invalid {
+  border: 2px solid red;
+}
+body main form button {
+  background-color: green;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.25rem 1rem;
+  cursor: pointer;
+}
+body main form button:hover, body main form button:focus {
+  background-color: rgb(34, 143, 34);
+}
+
+/*# sourceMappingURL=styles.css.map */
