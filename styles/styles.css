@@ -29,7 +29,9 @@ body {
   }
 }
 body header {
-  background: url("../images/header-picture.jpg") center;
+  background-image: url("../images/header-picture.jpg");
+  background-position: center;
+  background-size: cover;
   color: white;
   padding: 1rem 0;
   display: flex;
