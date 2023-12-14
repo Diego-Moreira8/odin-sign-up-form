@@ -41,8 +41,13 @@
               >*</span
             ></label
           >
-          <input type="text" name="first-name" id="first-name" />
-          <div class="error-message"></div>
+          <input
+            type="text"
+            name="first-name"
+            id="first-name"
+            maxlength="100"
+            required
+          />
         </div>
 
         <div class="form-row">
@@ -51,8 +56,13 @@
               >*</span
             ></label
           >
-          <input type="text" name="last-name" id="last-name" />
-          <div class="error-message"></div>
+          <input
+            type="text"
+            name="last-name"
+            id="last-name"
+            maxlength="100"
+            required
+          />
         </div>
 
         <div class="form-row">
@@ -61,8 +71,13 @@
               >*</span
             ></label
           >
-          <input type="email" name="email" id="email" />
-          <div class="error-message"></div>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            maxlength="100"
+            required
+          />
         </div>
 
         <div class="form-row">
@@ -71,8 +86,7 @@
               >*</span
             ></label
           >
-          <input type="tel" name="phone" id="phone" />
-          <div class="error-message"></div>
+          <input type="tel" name="phone" id="phone" maxlength="20" required />
         </div>
 
         <div class="form-row">
@@ -81,8 +95,14 @@
               >*</span
             ></label
           >
-          <input type="password" name="password" id="password" />
-          <div class="error-message"></div>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            maxlength="50"
+            minlength="8"
+            required
+          />
         </div>
 
         <div class="form-row">
@@ -95,8 +115,10 @@
             type="password"
             name="confirm-password"
             id="confirm-password"
+            minlength="8"
+            maxlength="50"
+            required
           />
-          <div class="error-message"></div>
         </div>
 
         <button type="submit">Criar Conta</button>
